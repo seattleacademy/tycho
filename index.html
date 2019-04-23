@@ -63,6 +63,7 @@
     questions.push(makeQ("\\dfrac{1}{2}", ".5", 1));
     questions.push(makeQ("\\dfrac{1}{2}", ".5", 1));
     questions.push(makeQ("\\sqrt{16}", "4", 1));
+    questions.push(makeQ("\\sqrt{16}=4", "True", 1));
 
 
     function makeTest(e) {
@@ -88,11 +89,23 @@
 
     $("input").change(checkAnswer);
 
+    function doesMatch(a,b){
+        a = a.toLowerCase().trim();
+        b = b.toLowerCase().trim();
+
+        if(a==b){
+            return true;
+        } else{
+            return false;
+        }
+
+    }
+
     function checkAnswer(e) {
         correct = $(this).data("answer");
         response = $(this).val();
 
-        if (correct == response) {
+        if (doesMatch(correct,response)) {
             $(this).removeClass("incorrect").addClass("correct");
             var numCorrect = $("#numCorrect").text();
             $("#numCorrect").text(numCorrect * 1 + 1);
