@@ -1,0 +1,30 @@
+.odd {
+        background: green;
+        border-style: solid;
+        height: 50px;
+        width: 45%;
+        float: left;
+
+    }
+
+    .even {
+                height: 50px;
+        background: pink;
+        border-style: solid;
+        width: 45%;
+        float: right;
+
+    }
+
+    input {
+        /*   display:none; */
+        /*   visibility:hidden; */
+    }
+
+    .correct {
+        background-color: #00DD00;
+    }
+
+    .incorrect {
+        background-color: red;
+    }
