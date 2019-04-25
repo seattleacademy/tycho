@@ -1,12 +1,12 @@
-<<<<<<< HEAD
     console.clear();
 
 
-    function makeQ(q, a, level) {
+    function makeQ(q, a, level, i = null) {
         let question = {}
         question.q = q;
         question.a = a;
         question.level = level;
+        question.i = i
         return question;
     }
 
@@ -15,7 +15,8 @@
     questions.push(makeQ("\\dfrac{1}{2}", ".5", 1));
     questions.push(makeQ("\\dfrac{1}{2}", ".5", 1));
     questions.push(makeQ("\\sqrt{16}", "4", 1));
-    questions.push(makeQ("\\sqrt{16}=4", "True", 1));
+    questions.push(makeQ("Find the perimeter", "4", 1,"qi.png"));
+    questions.push(makeQ("\\sqrt{16}=4", "True",1))
 
 
     function makeTest(e) {
@@ -37,26 +38,26 @@
 
     }
 
-   makeTest();
+    makeTest();
 
     $("input").change(checkAnswer);
 
     function doesMatch(a,b){
-
-        a = a.toString().toLowerCase().trim();
-        b = b.toString().toLowerCase().trim();
+        a = a.toLowerCase().trim()
+        b = b.toLowerCase().trim()
         if(a==b){
-            return true;
-        } else{
-            return false;
+            return true
         }
-
+        else{
+            return false
+        }
     }
 
     function checkAnswer(e) {
         correct = $(this).data("answer");
         response = $(this).val();
 
+        // if (correct == response) {
         if (doesMatch(correct,response) == true) {
             $(this).removeClass("incorrect").addClass("correct");
             var numCorrect = $("#numCorrect").text();
@@ -65,8 +66,3 @@
             $(this).removeClass("correct").addClass("incorrect");
         }
     }
-=======
-    questions.push(makeQ("2^3", "8", 1));
-
-    // makeTest();
->>>>>>> 8d1cd5c58461c00af0a391a6c8fa1170cb704958
