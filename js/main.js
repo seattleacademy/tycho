@@ -1,12 +1,13 @@
     console.clear();
 
 
-    function makeQ(q, a, level, type) {
+    function makeQ(q, a, level, type, img=null) {
         let question = {}
         question.q = q;
         question.a = a;
         question.level = level;
         question.type = type;
+        question.img = img;
         return question;
     }
 
@@ -16,6 +17,8 @@
     questions.push(makeQ("\\sqrt{16}", "4", 1, 1));
     questions.push(makeQ("\\sqrt{16}=4", "True", 1, 4));
     questions.push(makeQ("How many Radians are in 360 degrees", "2\\pi", 3, 2))
+    questions.push(makeQ("Find the perimiter:", "?", 3, 3, "qi.png"))
+    questions.push(makeQ("How cute is this dog, 0-10", "10", 1, 3, "dog.jpg"))
 // For Question.type:
 //     1 = Number question
 //     2 = Plain text question
@@ -40,7 +43,7 @@
                 theQuestion += '</div>';
                 $('#theQuestions').append(theQuestion);
              }
-            else if(questions[i].type == 2){
+             else if(questions[i].type == 2){
                 if (i % 2 == 1)
                     theQuestion = '<div class="odd">';
                 else
@@ -52,7 +55,22 @@
                 theQuestion += '</div>';
                 $('#theQuestions').append(theQuestion);
             }
-             else if(questions[i].type == 4){
+            else if(questions[i].type == 3){
+                if (i % 2 == 1)
+                    theQuestion = '<div class="odd">';
+                else
+                    theQuestion = '<div class="even">';
+                theQuestion += questions[i].q;
+                theQuestion += "<img src='http://math.seattleacademy.org/aldenmcgonagle/day72/img/";
+                theQuestion += questions[i].img;
+                theQuestion += "'>";
+                theQuestion += '<input data-answer="';
+                theQuestion += questions[i].a;
+                theQuestion += '">'
+                theQuestion += '</div>';
+                $('#theQuestions').append(theQuestion);
+            }
+            else if(questions[i].type == 4){
                 if (i % 2 == 1)
                     theQuestion = '<div class="odd">';
                 else

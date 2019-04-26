@@ -1,4 +1,4 @@
-.odd {
+/*.odd {
         background: green;
         border-style: solid;
         height: 50px;
@@ -19,7 +19,7 @@
     input {
         /*   display:none; */
         /*   visibility:hidden; */
-    }
+/*    }
 
     .correct {
         background-color: #00DD00;
@@ -27,4 +27,35 @@
 
     .incorrect {
         background-color: red;
-    }
+    }*/
+
+.odd{
+    background: orange;
+    border-style:solid;
+    height: 50px;
+    width: 45%;
+    float: left;
+}
+
+.even{
+    background: red;
+    border-style:solid;
+    height: 50px;
+    width: 45%;
+    float: right;
+}
+
+.correct {
+   background-color: #00DD00;
+}
+    
+ .incorrect {
+   background-color: red;
+ }
+
+input {
+  background-color: white;
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding-left: 10px;
+}
